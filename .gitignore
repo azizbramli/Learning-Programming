@@ -6,6 +6,7 @@
 .gitattributes
 ------------------------
 *.class
+*.csv
 *.exe
 *jar
 *.jpg
