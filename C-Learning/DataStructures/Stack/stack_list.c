@@ -3,7 +3,6 @@
  *
  */
 
-#include <stdbool.h>
 #include <stddef.h>
 #include "stack_list.h"
 
