@@ -3,7 +3,6 @@
  *
  */
 
-#include <stdbool.h>
 #include "stack_array.h"
 
 void    init(Stack *stack)
