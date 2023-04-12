@@ -18,8 +18,8 @@ static void modify_arr(char arr[], int size)
 int         main(void)
 {
   char  arr[]     = "abcd";
-  char  *p        = t;
-  char  (*pp)[5]  = &t;
+  char  *p        = arr;
+  char  (*pp)[5]  = &arr;
 
   modify_arr(arr, 4);
   modify_arr(&arr[0], 4);
