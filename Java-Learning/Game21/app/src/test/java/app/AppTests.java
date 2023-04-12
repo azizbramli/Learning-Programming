@@ -1,3 +1,5 @@
+// Copyright(C) 2023, Charles T, <chalodss@proton.me>
+
 package app;
 
 import org.junit.jupiter.api.DisplayName;
