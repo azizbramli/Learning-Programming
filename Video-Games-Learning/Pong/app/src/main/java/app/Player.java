@@ -17,7 +17,7 @@ public final class Player extends Rectangle {
     setOnKeyReleased(this::onKeyReleased);
   }
 
-  void move(int vel) {
+  void move(double vel) {
     this.vel = vel;
     setY(getY() + vel);
   }
