@@ -38,11 +38,11 @@ public final class Game extends AnimationTimer {
   @Override
   public void handle(long now) {
     handlePlayer();
-    update();
-    endGame();
+    updateGame();
+    checkEndGame();
   }
 
-  void endGame() {
+  void checkEndGame() {
     if (ball.getCenterX() < 15) {
       stop();
     }
@@ -50,7 +50,7 @@ public final class Game extends AnimationTimer {
 
   void handlePlayer() {
     if (player.getY() >= 10 && player.getY() <= 600) {
-      player.setY(player.getY() + player.vel);
+      player.move(player.vel);
     }
   }
 
@@ -67,7 +67,7 @@ public final class Game extends AnimationTimer {
     dY  = mag * sin(a);
   }
 
-  void update() {
+  void updateGame() {
     ball.setCenterX(ball.getCenterX() + dX);
     ball.setCenterY(ball.getCenterY() + dY);
     cpu.setY(ball.getCenterY() - 75);
