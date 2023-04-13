@@ -4,7 +4,7 @@ package app;
 
 import static java.lang.Math.PI;
 
-public class Constants {
+public final class Constants {
 
   public static final double C      = PI / 4.0;
 
