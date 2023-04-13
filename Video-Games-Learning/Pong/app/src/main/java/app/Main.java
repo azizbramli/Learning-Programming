@@ -16,7 +16,6 @@ public class Main extends Application {
       BorderPane root  = FXMLLoader.load(getClass().getResource("/View.fxml"));
       Scene      scene = new Scene(root);
 
-      scene.getStylesheets().add(getClass().getResource("/pong.css").toExternalForm());
       primaryStage.setResizable(false);
       primaryStage.setTitle("Pong");
       primaryStage.setScene(scene);
