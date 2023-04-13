@@ -1,0 +1,19 @@
+#leftMenu {
+    -fx-background-color: #b8b8b8;
+}
+
+.button {
+    -fx-background-radius: 15;
+    -fx-background-color: #f0f0f0;
+    -fx-font-size: 25px;
+    -fx-font-family: "Consolas";
+    -fx-font-weight: bold;
+    -fx-text-fill: black;
+    -fx-cursor: hand;
+}
+
+.label {
+    -fx-font-size: 22px;
+    -fx-font-family: "Consolas";
+    -fx-text-fill: white;
+}
