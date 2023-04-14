@@ -69,5 +69,6 @@ int                 main(int argc, char *argv[])
 {
     int     size = strtoul(argv[1], NULL, 10);
 
+    sapin_1(size);
     return 0;
 }
