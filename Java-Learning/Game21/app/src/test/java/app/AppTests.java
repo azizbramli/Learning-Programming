@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class AppTests {
     Player p = new Player("Chalodss");
     
-    @RepeatedTest(value = 5, name = "{displayName} - {currentRepetition} / {totalRepetitions}")
+    @RepeatedTest(value = 100, name = "{displayName} - {currentRepetition} / {totalRepetitions}")
     @DisplayName("testThrowDice")
     void testThrowDice() {
         var diceRoll = p.throwDice();
