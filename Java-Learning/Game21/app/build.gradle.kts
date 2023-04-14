@@ -26,17 +26,30 @@ application {
     mainClass.set("app.Main")
 }
 
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(20))
+    }
+}
+
+tasks.named<JavaCompile>("compileJava") {
+    javaCompiler.set(javaToolchains.compilerFor {
+        languageVersion.set(JavaLanguageVersion.of(20))
+    })
+}
+
 tasks.named<JavaExec>("run") {
-    standardInput = System.`in`
+    setStandardInput(System.`in`)
 }
 
 tasks.named<Test>("test") {
-    // Use JUnit Platform for unit tests.
+    javaLauncher.set(javaToolchains.launcherFor {
+        languageVersion.set(JavaLanguageVersion.of(20))
+    })
     useJUnitPlatform()
 }
 
-tasks.withType<Jar> {
-    manifest {
-        attributes["Main-Class"] = "app.Main"
-    }
+tasks.named<Jar>("jar") {
+    val map = mapOf<String,String>("Main-class" to "app.Main");
+    manifest.attributes(map);
 }
