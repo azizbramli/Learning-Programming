@@ -27,12 +27,32 @@ application {
     mainClass.set("app.Main")
 }
 
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(20))
+    }
+}
+
 javafx {
-    version = "17"
+    version = "20"
     modules("javafx.controls", "javafx.fxml")
 }
 
+tasks.named<JavaCompile>("compileJava") {
+    javaCompiler.set(javaToolchains.compilerFor {
+        languageVersion.set(JavaLanguageVersion.of(20))
+    })
+}
+
 tasks.named<Test>("test") {
-    // Use JUnit Platform for unit tests.
+    javaLauncher.set(javaToolchains.launcherFor {
+        languageVersion.set(JavaLanguageVersion.of(20))
+    })
     useJUnitPlatform()
+}
+
+tasks.named<Jar>("jar") {
+    manifest {
+        attributes["Main-Class"] = "app.Main"
+    }
 }
